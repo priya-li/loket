@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     width: 100%;
+    /* overflow-x: hidden; */
 }
 body{
     min-height: 100vh;
@@ -15,7 +16,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 9999;
+    z-index: 1;
     animation: nav-change;
     animation-timeline: scroll();   
 }
@@ -178,37 +179,56 @@ address a{
 }
 
 
-@keyframes wobble{
+@keyframes wobbleC{
+    0%, 20%{
+        transform: rotate(2deg);
+    }
+    10%{
+        transform: rotate(0);
+    }
+}
+@keyframes wobbleI{
     0%{
         transform: rotate(2deg);
     }
 }
-
-.home-title-iconic span:nth-child(2),
-.home-title-iconic span:nth-child(3){
-    animation: wobble 0.5s ease-in-out;
-    transform-origin: bottom;
-    /* animation-delay: 0.4s; */
-}
 .home-title-iconic span:nth-child(2){
+    animation: wobbleC 0.7s ease-in;
+    transform-origin: bottom;
     animation-delay: 0.4s;
 }
 .home-title-iconic span:nth-child(3){
+    animation: wobbleI 0.5s ease-in-out;
+    transform-origin: bottom;
     animation-delay: 0.5s;
 }
 
 .home-title-iconic span:nth-child(4){
-    font-size: 31vw;
+    font-size: 30.5vw;
     font-family: 'GT Flexa Trial Cm Bd';
+
 }
 
 
+
 .home-main-functionalism h1{
-    padding: 0 32px;
+    padding: 0 30px;
     font-family: 'GT America Trial Cm Bd';
     font-size: 17vw;
+    
     letter-spacing: -1;
+}
+@media (max-width:1100px){
+    .home-main-functionalism h1{
+        font-size: clamp(4.375rem, 0.125rem + 17vw, 15rem);
+    }
 }
 .home-main-functionalism h1 span{
     font-family: 'GT Flexa Trial Cm Bd';
 }
+
+
+/* .hero-image img{
+    width: 100px;
+    height: auto;
+} */
