@@ -17,7 +17,7 @@ window.addEventListener('scroll', function() {
   window.addEventListener('scroll', function() {
     var s2Image = document.getElementById('s2Image');
     var bounding = s2Image.getBoundingClientRect();
-    var scrollTop = window.scrollY || window.pageYOffset; // Use window.scrollY as a replacement
+    var scrollTop = window.scrollY || window.scrollY; // Use window.scrollY as a replacement
     var isVisible = bounding.top < window.innerHeight && bounding.bottom >= 0;
 
     if (isVisible) {
